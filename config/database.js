@@ -2,7 +2,8 @@ const mongoose = require('mongoose')
 
 const conexao = async()=>{
 
-    const atlas = await mongoose.connect('mongodb+srv://user3tri:oi@fiaptecnico.zg8lq.mongodb.net/test')
+    const atlas = await mongoose.connect('mongodb+srv://user3tri:oi@fiaptecnico.zg8lq.mongodb.net/html5up')
+}
 
 const modelo = mongoose.Schema({
 
@@ -12,4 +13,8 @@ const modelo = mongoose.Schema({
     texto:String,
     publicado:{type:Date, default:Date.now}
 })
-}
+
+const conteudo = mongoose.model('conteudo',modelo)
+
+module.exports = {conexao, conteudo}
+
